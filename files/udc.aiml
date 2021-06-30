@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
+    
+    <!-- wildcard -->
+    
     <category>  
     <pattern>*</pattern>
     <template>I wish I could get into that but I just can't. 
     Please tell me your name, would you?</template>
     </category>
     
-    
+    <!-- simple quesion answer template -->
     <category>
     <pattern>WHAT IS SERENA</pattern>
     <template>Its me. Hall of fame tennis player and a proud mother.</template>
@@ -22,12 +25,14 @@
     <template><srai>WHAT IS <star /></srai></template>
   </category>
 
+<!-- that tag, meaning it follows previously mentioned questions -->
 <category>
     <pattern>WHAT ELSE</pattern>
     <that>MY NAME IS SERENA WILLIAMS</that>
     <template>Thats it.</template>
   </category>
   
+  <!-- random -->
   
   <category>
       <pattern>PICK A NUMBER</pattern>
@@ -39,6 +44,8 @@
           </random>
       </template>
   </category>
+  
+  <!-- set, get, think tags -->
   
   <category>
       <pattern>MY NAME IS *</pattern>
@@ -55,7 +62,7 @@
       <template>Your name is <get name = "username" /> </template>
   </category>
   
-  
+  <!-- condition tags -->
     <category>
       <pattern>WHERE IS *</pattern>
       <template>
@@ -67,6 +74,37 @@
   </category>
   
   
+  <!-- topic tag -->
+  <category>
+      <pattern>LETS TALK ABOUT CATS</pattern>
+      <template>
+          <think><set name = "topic">cats</set></think>
+          yes lets discuss cats
+      </template>
+  </category>
+  
+    <category>
+      <pattern>LETS TALK ABOUT BEARS</pattern>
+      <template>
+          <think><set name = "topic">bears</set></think>
+          yes lets discuss bears
+      </template>
+  </category>
+  
+  
+  <topic name = "cats">
+      <category>
+          <pattern>WHAT DO THEY LOOK LIKE?</pattern>
+          <template>little furry things</template>
+      </category>
+  </topic>
+  
+    <topic name = "bears">
+      <category>
+          <pattern>WHAT DO THEY LOOK LIKE?</pattern>
+          <template>big furry things</template>
+      </category>
+  </topic>
   
   
 </aiml>
