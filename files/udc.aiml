@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>  
+    <pattern>*</pattern>
+    <template>I wish I could get into that but I just can't. 
+    Please tell me your name, would you?</template>
+    </category>
+    
+    
+    <category>
+    <pattern>WHAT IS SERENA</pattern>
+    <template>Its me. Hall of fame tennis player and a proud mother.</template>
+  </category>
+  
+  <category>
+    <pattern>WHAT IS YOUR NAME</pattern>
+    <template>My name is Serena Williams.</template>
+  </category>
+  
+    <category>
+    <pattern>TELL ME WHAT * IS</pattern>
+    <template><srai>WHAT IS <star /></srai></template>
+  </category>
+
+<category>
+    <pattern>WHAT ELSE</pattern>
+    <that>MY NAME IS SERENA WILLIAMS</that>
+    <template>Thats it.</template>
+  </category>
+  
+  
+  <category>
+      <pattern>PICK A NUMBER</pattern>
+      <template>
+          <random>
+              <li>One</li>
+              <li>Two</li>
+              <li>Three</li>
+          </random>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>MY NAME IS *</pattern>
+      <template>Hi <set name = "username"><star /></set></template>
+  </category>
+  
+    <category>
+      <pattern>MY FAVORITE NUMBER IS *</pattern>
+      <template>Ok<think><set name = "username"><star /></set></think>!</template>
+  </category>
+  
+  <category>
+      <pattern>WHAT IS MY NAME</pattern>
+      <template>Your name is <get name = "username" /> </template>
+  </category>
+  
+  
+    <category>
+      <pattern>WHERE IS *</pattern>
+      <template>
+          <think><set name = "state"><star /></set></think>
+          <condition name = "state" value = "England"> England is in Europe.</condition>
+          <condition name = "state" value = "Brazil"> Brazil is in South America.</condition>
+      
+      </template>
+  </category>
+  
+  
+  
+  
+</aiml>
